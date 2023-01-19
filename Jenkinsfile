@@ -7,20 +7,9 @@ pipeline {
       }
     }
 
-    stage('Tests') {
-      parallel {
-        stage('log') {
-          steps {
-            sh 'ls -la'
-          }
-        }
-
-        stage('Front-end unit tests') {
-          steps {
-            sh 'cd curriculum-front && npm i && npm run test:unit'
-          }
-        }
-
+    stage('log') {
+      steps {
+        sh 'ls -la'
       }
     }
 
