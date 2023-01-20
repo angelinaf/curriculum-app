@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f curriculum-front/Dockerfile . -t fuze365/curriculum-front'
+        sh 'docker build -f curriculum-front/Dockerfile . -t angelinaf/jenkins-course'
       }
     }
 
@@ -31,7 +31,7 @@ pipeline {
 
     stage('push') {
       steps {
-        sh 'docker push fuze365/curriculum-front:latest'
+        sh 'docker push angelinaf/jenkins-course:tagname'
       }
     }
 
