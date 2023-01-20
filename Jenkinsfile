@@ -31,7 +31,7 @@ pipeline {
 
     stage('push') {
       steps {
-        sh 'docker push angelinaf/jenkins-course:tagname'
+        sh 'docker push angelinaf/jenkins-course:latest'
       }
     }
 
