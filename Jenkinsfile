@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f curriculum-front/Dockerfile .'
+        sh 'docker build -f curriculum-front/Dockerfile . -t fuze365/curriculum-front'
       }
     }
 
@@ -26,6 +26,12 @@ pipeline {
       }
       steps {
         sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD'
+      }
+    }
+
+    stage('push') {
+      steps {
+        sh 'docker push fuze365/curriculum-front:latest'
       }
     }
 
