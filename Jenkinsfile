@@ -7,17 +7,5 @@ pipeline {
       }
     }
 
-    stage('log') {
-      steps {
-        sh 'ls -la'
-      }
-    }
-
-    stage('Build') {
-      steps {
-        sh 'docker info'
-      }
-    }
-
   }
 }
